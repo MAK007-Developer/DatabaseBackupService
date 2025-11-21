@@ -1,31 +1,31 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/.NET%20Framework-4.0+-purple?logo=dotnet" alt=".NET Framework Badge" />
+  <img src="https://img.shields.io/badge/C%23-0078d7?logo=csharp&logoColor=white" alt="C# Badge" />
+  <img src="https://img.shields.io/badge/Windows%20Service-Automation-blue?logo=windows" alt="Windows Service Badge" />
+</p>
 
-
-🗄️ Database Backup Windows Service
+# 🗄️ Database Backup Windows Service
 
 A lightweight and reliable Windows Service that automates SQL Server database backups at configurable time intervals.
 
 
-
-
-
-
-📌 Overview
+## 📌 Overview
 
 The Database Backup Service is a Windows Service built using C# (.NET Framework) to automatically back up a SQL Server database at fixed intervals.
 It runs continuously in the background, performs scheduled backups, and logs all activities for reliability and auditing.
 
 This service is ideal for developers, DB admins, or small applications that need automated, low-maintenance backup without setting up SQL Agent Jobs or external schedulers.
 
-🚀 Features
-🔄 Automated Backup Execution
+## 🚀 Features
+### 🔄 Automated Backup Execution
 
-Backs up a specified SQL Server database at intervals defined by the user in the .config file.
+* Backs up a specified SQL Server database at intervals defined by the user in the .config file.
 
-Uses System.Timers.Timer to trigger backup operations consistently.
+* Uses System.Timers.Timer to trigger backup operations consistently.
 
-⚙️ Configurable Through App.config
+### ⚙️ Configurable Through App.config
 
-Define all key parameters without modifying code:
+#### Define all key parameters without modifying code:
 
 <appSettings>
   <add key="DatabaseName" value="MyDatabase" />
@@ -35,88 +35,84 @@ Define all key parameters without modifying code:
   <add key="LogFolder" value="C:\DatabaseLogs" />
 </appSettings>
 
-📝 Event Logging
+### 📝 Event Logging
 
-The service logs:
+#### The service logs:
 
-Service start and stop events
+- Service start and stop events
 
-Backup start and success messages
++ Backup start and success messages
 
-Backup completion path
+* Backup completion path
 
-Errors and exception details
+* Errors and exception details
 
-SQL execution failures
+* SQL execution failures
 
-Timer-triggered events
+* Timer-triggered events
 
-Logs are written to:
+* Logs are written to:
 
-A daily log file
+* A daily log file
 
-Windows Event Viewer
+* Windows Event Viewer
 
-🧯 Graceful Error Handling
+### 🧯 Graceful Error Handling
 
-Try/catch around database operations
+* Try/catch around database operations
 
-SQL exceptions logged with timestamp
+* SQL exceptions logged with timestamp
 
-Service continues running even after failures
+* Service continues running even after failures
 
-🛠️ Minimal Setup & Deployment
+### 🛠️ Minimal Setup & Deployment
 
-Includes a ProjectInstaller for proper Windows Service configuration:
+#### Includes a ProjectInstaller for proper Windows Service configuration:
 
-Sets service name
+* Sets service name
 
-Startup type: Automatic
+* Startup type: Automatic
 
-Supports InstallUtil installation
+* Supports InstallUtil installation
 
-🧩 How It Works
+### 🧩 How It Works
 
-Service starts → loads configuration values
+* Service starts → loads configuration values
 
-Validates or creates the backup & log directories
+* Validates or creates the backup & log directories
 
-Timer triggers according to the interval
+* Timer triggers according to the interval
 
-Service runs SQL command:
+* Service runs SQL command:
 
 BACKUP DATABASE [DatabaseName]
 TO DISK = 'C:\DatabaseBackups\Database_YYYYMMDD_HHMMSS.bak'
 WITH INIT;
 
 
-Backup file is created with a timestamp
+* Backup file is created with a timestamp
 
-All actions logged with timestamps
+* All actions logged with timestamps
 
-On error → service logs it and continues running
+* On error → service logs it and continues running
 
-🧪 Console Mode for Debugging (Optional)
+### 🧪 Console Mode for Debugging (Optional)
 
-When run interactively (e.g., in Visual Studio), the service can switch to console mode:
+* When run interactively (e.g., in Visual Studio), the service can switch to console mode:
 
-Displays log messages in the console
+* Displays log messages in the console
 
-Allows manually stopping the program
+* Allows manually stopping the program
 
-Useful for verifying SQL connection, backup logic, logging, and configuration
+* Useful for verifying SQL connection, backup logic, logging, and configuration
 
-📦 Installation (Service Mode)
+### 📦 Installation (Service Mode)
 1. Build the project in Release mode
-
 In Visual Studio → Build → Configuration: Release
 
 2. Copy output files
-
 Located in:
-
 bin\Release\
-
 
 Includes:
 
@@ -141,49 +137,72 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe DatabaseBackupServ
 
 Open Services.msc → find DatabaseBackupService → Start
 
-📂 Example Log Output
+### 📂 Example Log Output
+
 [2025-01-21 09:10:00] Service Started.
+
 [2025-01-21 09:10:00] Backup triggered.
+
 [2025-01-21 09:10:01] Backup completed: C:\DatabaseBackups\MyDatabase_20250121_091001.bak
+
 [2025-01-21 09:40:00] Backup triggered.
+
 [2025-01-21 09:40:02] Error: Cannot open database requested in login.
+
 [2025-01-21 09:40:02] Service Continues Running.
+
 [2025-01-21 10:00:00] Service Stopped.
 
-📁 Folder Structure Example
+
+### 📁 Folder Structure Example
+
 DatabaseBackupService/
+
 ├── bin/
+
 │   └── Release/
+
 ├── Logs/
+
 ├── Installers/
+
 ├── DatabaseBackupService.cs
+
 ├── BackupManager.cs
+
 ├── ProjectInstaller.cs
+
 ├── App.config
+
 └── README.md
 
-🧠 Design Considerations
+
+### 🧠 Design Considerations
 
 ✔ Running as a Windows Service ensures uninterrupted operation
+
 ✔ Centralized logging enables auditing and troubleshooting
+
 ✔ Timer-based scheduling avoids resource-heavy loops
+
 ✔ App.config-based settings allow non-technical users to adjust backup intervals
+
 ✔ Service recovers automatically after restart
 
-🧰 Tech Stack
+### 🧰 Tech Stack
 
-C#
+* C#
 
-.NET Framework
+* .NET Framework
 
-Windows Service API
+* Windows Service API
 
-SQL Server
+* SQL Server
 
-File I/O & Logging
+* File I/O & Logging
 
-Timer-based scheduling
+* Timer-based scheduling
 
-📜 License
+### 📜 License
 
 This project is available for personal or educational use.
