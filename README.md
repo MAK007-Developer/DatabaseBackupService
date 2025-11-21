@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/.NET%20Framework-4.0+-purple?logo=dotnet" alt=".NET Framework Badge" />
-  <img src="https://img.shields.io/badge/C%23-0078d7?logo=csharp&logoColor=white" alt="C# Badge" />
-  <img src="https://img.shields.io/badge/Windows%20Service-Automation-blue?logo=windows" alt="Windows Service Badge" />
+  <img src="https://img.shields.io/badge/.NET%20Framework-4.0+-purple?logo=dotnet&style=for-the-badge" alt=".NET Framework Badge" height="36" />
+  <img src="https://img.shields.io/badge/C%23-0078d7?logo=csharp&logoColor=white&style=for-the-badge" alt="C# Badge" height="36" />
+  <img src="https://img.shields.io/badge/Windows%20Service-Automation-blue?logo=windows&style=for-the-badge" alt="Windows Service Badge" height="36" />
 </p>
 
 # 🗄️ Database Backup Windows Service
