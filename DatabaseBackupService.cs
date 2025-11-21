@@ -64,7 +64,9 @@ namespace DatabaseBackupService
             }
             finally
             {
-                
+                connection.Close();
+                connection.Dispose();
+                command.Dispose();
             }
         }
 
@@ -182,3 +184,4 @@ namespace DatabaseBackupService
 
     }
 }
+
