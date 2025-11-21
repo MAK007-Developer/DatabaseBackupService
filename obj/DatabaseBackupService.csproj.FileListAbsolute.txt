@@ -1,0 +1,8 @@
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\bin\Release\DatabaseBackupService.exe.config
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\bin\Release\DatabaseBackupService.exe
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\bin\Release\DatabaseBackupService.pdb
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\obj\Release\DatabaseBackupService.csproj.AssemblyReference.cache
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\obj\Release\DatabaseBackupService.csproj.SuggestedBindingRedirects.cache
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\obj\Release\DatabaseBackupService.csproj.CoreCompileInputs.cache
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\obj\Release\DatabaseBackupService.exe
+D:\Programming Advices\24. Windows Services\Projects\My Projects\DatabaseBackupService\obj\Release\DatabaseBackupService.pdb
